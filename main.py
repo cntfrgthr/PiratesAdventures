@@ -57,7 +57,7 @@ class RollButton(Button):
         self.draw()
     
     def callback(self):
-        pass
+        Cube.roll(cube1)
     
 
 class MenuButton(Button):
@@ -68,7 +68,7 @@ class MenuButton(Button):
         self.text = pygame.font.Font('Fonts/IrishGrover.ttf', 60).render(str(text), 1, ('black'))
         self.draw()
     
-    def callback(self):
+    def callback():
         pass
 
 class ChooseButton(Button):
@@ -227,7 +227,8 @@ cells_array = []
 green_cell = GreenCell(100, 100)
 
 cube1 = Cube(850, 490)
-button = RollButton(500,500,'Textfff')
+cube2 = Cube(850, 560)
+button = RollButton(980,547,'Roll')
 
 
 
@@ -249,6 +250,6 @@ while True:
         for obj in objects:
             obj.button_state_checker()
         
-        
+    
     pygame.display.update()
     clock.tick(FPS)
