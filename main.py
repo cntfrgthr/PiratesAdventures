@@ -40,29 +40,24 @@ class Button(PlayingField):
         height = self.image.get_height()
         current_pos = pygame.mouse.get_pos()
         if (self.x < current_pos[0] < self.x + width) & (self.y < current_pos[1] < self.y + height):
-            #window.blit(self.active_button, (self.x, self.y))  
-            
-            self.image = self.active_button
-            self.draw()
+            window.blit(self.active_button, (self.x, self.y))  
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if pygame.mouse.get_pressed()[0]:
                     return self.callback()
         else:
-            #window.blit(self.image, (self.x, self.y))
-            self.image = self.memory
-            self.draw()
+            window.blit(self.image, (self.x, self.y))
+           
 
 class RollButton(Button):
     def __init__(self, x, y, text):
         super().__init__(x, y)
         self.active_button = pygame.image.load('Images/RollButton.png').convert_alpha()
         self.image = pygame.image.load('Images/RollButton2.png').convert_alpha()
-        #self.memory = self.image
         self.text = pygame.font.Font('Fonts/IrishGrover.ttf', 25).render(str(text), 1, ('black'))
         self.draw()
     
     def callback(self):
-        Player.roll_cube()
+        pass
     
 
 class MenuButton(Button):
