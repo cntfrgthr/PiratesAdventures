@@ -65,7 +65,6 @@ class MenuButton(Button):
         super().__init__(x, y)
         self.active_button = pygame.image.load('Images/PlayEffect.png').convert_alpha()
         self.image = pygame.image.load('Images/PlayButton.png').convert_alpha()
-        #self.memory = self.image
         self.text = pygame.font.Font('Fonts/IrishGrover.ttf', 60).render(str(text), 1, ('black'))
         self.draw()
     
@@ -230,11 +229,11 @@ green_cell = GreenCell(100, 100)
 cube1 = Cube(850, 490)
 button = RollButton(500,500,'Textfff')
 
-menubutton = MenuButton(100,500, 'Play')
+
 
 
 objects.append(button)
-objects.append(menubutton)
+
 
 #MainLoop#MainLoop#MainLoop
 #MainLoop#MainLoop#MainLoop
