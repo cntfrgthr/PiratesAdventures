@@ -526,7 +526,10 @@ player_images_setter(players)
 
 #flags and globals
 menu_flag = True
-sound_flag = True
+if sound_volume == 0.0:
+    sound_flag = False
+else:
+    sound_flag = True
 enter_ip_flag = False
 settings_window_flag = False
 input_text = ''
